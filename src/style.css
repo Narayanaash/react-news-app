@@ -1,0 +1,11 @@
+:root {
+    --swiper-theme-color: #ed6c02;
+}
+h1, h2, h3, h4, h5, h6, .MuiTypography-subtitle1 {
+    font-family: 'Oswald', sans-serif !important;
+    max-width: 460px;
+}
+
+img {
+    display: block;
+}
