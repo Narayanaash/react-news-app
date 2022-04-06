@@ -36,7 +36,7 @@ export default function Home() {
           <Grid
             item
             xs={3}
-            sx={{ position: 'sticky', top: 0, height: '100vh' }}
+            sx={{ position: 'sticky', top: 20, height: '100vh' }}
           >
             <Newsletter />
             <Social />

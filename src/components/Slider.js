@@ -1,6 +1,5 @@
-import { Navigation, Pagination, A11y } from 'swiper';
+import { Navigation, Pagination, Autoplay, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -14,10 +13,10 @@ export default function Slider() {
         Entertainment
       </Typography>
       <Swiper
-        modules={[Navigation, Pagination, A11y]}
-        spaceBetween={50}
+        modules={[Navigation, Pagination, A11y, Autoplay]}
         slidesPerView={1}
         navigation
+        autoplay
         pagination={{ clickable: true }}
       >
         {[1, 2, 3, 4].map((item) => (

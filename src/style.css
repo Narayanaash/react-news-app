@@ -3,7 +3,12 @@
 }
 h1, h2, h3, h4, h5, h6, .MuiTypography-subtitle1 {
     font-family: 'Oswald', sans-serif !important;
-    max-width: 460px;
+    max-width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 img {

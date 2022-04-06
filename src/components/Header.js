@@ -43,7 +43,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static" color="warning">
+    <AppBar position="sticky" color="warning">
       <Container maxWidth="lg">
         <Toolbar disableGutters variant="dense">
           <Link to="/">

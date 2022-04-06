@@ -61,7 +61,7 @@ export default function International() {
                         <Typography
                           gutterBottom
                           variant="subtitle1"
-                          component="subtitle1"
+                          component="div"
                         >
                           Now Is the Time to Think About
                         </Typography>
@@ -92,11 +92,7 @@ export default function International() {
                   <Typography variant="caption" component="p">
                     27 Dec 2020
                   </Typography>
-                  <Typography
-                    gutterBottom
-                    variant="subtitle1"
-                    component="subtitle1"
-                  >
+                  <Typography gutterBottom variant="subtitle1" component="div">
                     Now Is the Time to Think About
                   </Typography>
                 </CardContent>
