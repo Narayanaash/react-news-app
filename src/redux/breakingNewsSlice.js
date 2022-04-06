@@ -9,7 +9,9 @@ export const breakingNewsSlice = createSlice({
   initialState,
   reducers: {
     getNewsSuccess: (state, action) => {
-      state.breakingNewsList = action.payload;
+      state.breakingNewsList = action.payload.filter(
+        (item) => item.urlToImage !== null
+      );
     },
   },
 });

@@ -1,4 +1,4 @@
-import { Box, Paper } from '@mui/material';
+import { Box, Link, Paper } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { useEffect } from 'react';
@@ -29,30 +29,37 @@ export default function Breaking() {
             alt=""
             style={{ height: '100%', objectFit: 'cover' }}
           />
-          <Box
-            className="overlayText"
-            sx={{
-              p: 3,
-              position: 'absolute',
-              inset: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.6)',
-              display: 'flex',
-              alignItems: 'flex-end',
-            }}
+          <Link
+            href={breakingNews[0]?.url}
+            target="_blank"
+            rel="noreferrer"
+            color="inherit"
           >
-            <Box>
-              <Typography variant="caption" component="p">
-                {moment(breakingNews[0]?.publishedAt).format('LLLL')}
-              </Typography>
-              <Typography
-                variant="h4"
-                component="h4"
-                sx={{ fontWeight: '500', mt: 1 }}
-              >
-                {breakingNews[0]?.title}
-              </Typography>
+            <Box
+              className="overlayText"
+              sx={{
+                p: 3,
+                position: 'absolute',
+                inset: 0,
+                backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                display: 'flex',
+                alignItems: 'flex-end',
+              }}
+            >
+              <Box>
+                <Typography variant="caption" component="p">
+                  {moment(breakingNews[0]?.publishedAt).format('LLLL')}
+                </Typography>
+                <Typography
+                  variant="h4"
+                  component="h4"
+                  sx={{ fontWeight: '500', mt: 1 }}
+                >
+                  {breakingNews[0]?.title}
+                </Typography>
+              </Box>
             </Box>
-          </Box>
+          </Link>
         </Paper>
       </Grid>
       <Grid item xs={5}>
@@ -72,30 +79,37 @@ export default function Breaking() {
                   objectFit: 'cover',
                 }}
               />
-              <Box
-                className="overlayText"
-                sx={{
-                  p: 3,
-                  position: 'absolute',
-                  inset: 0,
-                  backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                  display: 'flex',
-                  alignItems: 'flex-end',
-                }}
+              <Link
+                href={breakingNews[1]?.url}
+                target="_blank"
+                rel="noreferrer"
+                color="inherit"
               >
-                <Box>
-                  <Typography variant="caption" component="p">
-                    {moment(breakingNews[1]?.publishedAt).format('LL')}
-                  </Typography>
-                  <Typography
-                    variant="subtitle1"
-                    component="div"
-                    sx={{ fontWeight: '500', mt: 1 }}
-                  >
-                    {breakingNews[1]?.title}
-                  </Typography>
+                <Box
+                  className="overlayText"
+                  sx={{
+                    p: 3,
+                    position: 'absolute',
+                    inset: 0,
+                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                    display: 'flex',
+                    alignItems: 'flex-end',
+                  }}
+                >
+                  <Box>
+                    <Typography variant="caption" component="p">
+                      {moment(breakingNews[1]?.publishedAt).format('LL')}
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      component="div"
+                      sx={{ fontWeight: '500', mt: 1 }}
+                    >
+                      {breakingNews[1]?.title}
+                    </Typography>
+                  </Box>
                 </Box>
-              </Box>
+              </Link>
             </Paper>
           </Grid>
           <Grid item xs={6}>
@@ -113,30 +127,37 @@ export default function Breaking() {
                   objectFit: 'cover',
                 }}
               />
-              <Box
-                className="overlayText"
-                sx={{
-                  p: 3,
-                  position: 'absolute',
-                  inset: 0,
-                  backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                  display: 'flex',
-                  alignItems: 'flex-end',
-                }}
+              <Link
+                href={breakingNews[2]?.url}
+                target="_blank"
+                rel="noreferrer"
+                color="inherit"
               >
-                <Box>
-                  <Typography variant="caption" component="p">
-                    {moment(breakingNews[2]?.publishedAt).format('LL')}
-                  </Typography>
-                  <Typography
-                    variant="subtitle1"
-                    component="div"
-                    sx={{ fontWeight: '500', mt: 1 }}
-                  >
-                    {breakingNews[2]?.title}
-                  </Typography>
+                <Box
+                  className="overlayText"
+                  sx={{
+                    p: 3,
+                    position: 'absolute',
+                    inset: 0,
+                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                    display: 'flex',
+                    alignItems: 'flex-end',
+                  }}
+                >
+                  <Box>
+                    <Typography variant="caption" component="p">
+                      {moment(breakingNews[2]?.publishedAt).format('LL')}
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      component="div"
+                      sx={{ fontWeight: '500', mt: 1 }}
+                    >
+                      {breakingNews[2]?.title}
+                    </Typography>
+                  </Box>
                 </Box>
-              </Box>
+              </Link>
             </Paper>
           </Grid>
           <Grid item xs={12}>
@@ -154,30 +175,37 @@ export default function Breaking() {
                   objectFit: 'cover',
                 }}
               />
-              <Box
-                className="overlayText"
-                sx={{
-                  p: 3,
-                  position: 'absolute',
-                  inset: 0,
-                  backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                  display: 'flex',
-                  alignItems: 'flex-end',
-                }}
+              <Link
+                href={breakingNews[3]?.url}
+                target="_blank"
+                rel="noreferrer"
+                color="inherit"
               >
-                <Box>
-                  <Typography variant="caption" component="p">
-                    {moment(breakingNews[3]?.publishedAt).format('LLLL')}
-                  </Typography>
-                  <Typography
-                    variant="h5"
-                    component="h5"
-                    sx={{ fontWeight: '500', mt: 1 }}
-                  >
-                    {breakingNews[3]?.title}
-                  </Typography>
+                <Box
+                  className="overlayText"
+                  sx={{
+                    p: 3,
+                    position: 'absolute',
+                    inset: 0,
+                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                    display: 'flex',
+                    alignItems: 'flex-end',
+                  }}
+                >
+                  <Box>
+                    <Typography variant="caption" component="p">
+                      {moment(breakingNews[3]?.publishedAt).format('LLLL')}
+                    </Typography>
+                    <Typography
+                      variant="h5"
+                      component="h5"
+                      sx={{ fontWeight: '500', mt: 1 }}
+                    >
+                      {breakingNews[3]?.title}
+                    </Typography>
+                  </Box>
                 </Box>
-              </Box>
+              </Link>
             </Paper>
           </Grid>
         </Grid>
