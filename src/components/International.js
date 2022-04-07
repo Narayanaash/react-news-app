@@ -1,10 +1,24 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid, Link, Typography } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchInternationalNews } from '../redux/apiCalls';
+import moment from 'moment';
 
 export default function International() {
+  const internationalNews = useSelector(
+    (state) => state.internationalNewsSlice.internationalNewsList
+  );
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    fetchInternationalNews(dispatch);
+  }, []);
+
   return (
     <Box sx={{ mb: 4 }}>
       <Grid container spacing={5}>
@@ -18,58 +32,76 @@ export default function International() {
           </Typography>
           <Grid container spacing={2}>
             <Grid item xs={6}>
-              <Card sx={{ borderRadius: 0 }}>
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    image="https://i.blogs.es/e044d8/apple-studio-display-5k/840_560.jpeg"
-                    alt="green iguana"
-                  />
-                  <CardContent>
-                    <Typography variant="caption" component="p">
-                      Craig Bator - 27 Dec 2020
-                    </Typography>
-                    <Typography gutterBottom variant="h6" component="h6">
-                      Now Is the Time to Think About Your Small Business Success
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Faucibus lobortis augue condimentum maecenas. Metus at in
-                      fames vitae posuere ut vel vulputate....
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+              <Link
+                href={internationalNews && internationalNews[1]?.url}
+                target="_blank"
+                rel="noreferrer"
+                color="inherit"
+              >
+                <Card sx={{ borderRadius: 0 }}>
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      image={
+                        internationalNews && internationalNews[1]?.urlToImage
+                      }
+                      alt="green iguana"
+                    />
+                    <CardContent>
+                      <Typography variant="caption" component="p">
+                        {internationalNews &&
+                          moment(internationalNews[1]?.publishedAt).format(
+                            'LLLL'
+                          )}
+                      </Typography>
+                      <Typography gutterBottom variant="h6" component="h6">
+                        {internationalNews && internationalNews[1]?.title}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {internationalNews && internationalNews[1]?.description}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Link>
             </Grid>
             <Grid item xs={6} sx={{ mt: -2 }}>
-              {[1, 2, 3, 4].map((item) => (
-                <Box>
-                  <Card sx={{ mt: 2, borderRadius: 0 }}>
-                    <CardActionArea
-                      sx={{ display: 'flex', alignItems: 'flex-start' }}
+              {internationalNews &&
+                internationalNews.slice(2, 6).map((item, index) => (
+                  <Box key={index}>
+                    <Link
+                      href={item?.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      color="inherit"
                     >
-                      <CardMedia
-                        component="img"
-                        sx={{ height: 100, width: 100 }}
-                        image="https://i.blogs.es/e044d8/apple-studio-display-5k/840_560.jpeg"
-                        alt="Live from space album cover"
-                      />
-                      <CardContent sx={{ flex: '1 0 auto', pt: 1 }}>
-                        <Typography variant="caption" component="p">
-                          27 Dec 2020
-                        </Typography>
-                        <Typography
-                          gutterBottom
-                          variant="subtitle1"
-                          component="div"
+                      <Card sx={{ mt: 2, borderRadius: 0 }}>
+                        <CardActionArea
+                          sx={{ display: 'flex', alignItems: 'flex-start' }}
                         >
-                          Now Is the Time to Think About
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                  </Card>
-                </Box>
-              ))}
+                          <CardMedia
+                            component="img"
+                            sx={{ height: 108, width: 100 }}
+                            image={item.urlToImage}
+                            alt="Live from space album cover"
+                          />
+                          <CardContent sx={{ pt: 1 }}>
+                            <Typography variant="caption" component="p">
+                              {moment(item.publishedAt).format('LL')}
+                            </Typography>
+                            <Typography
+                              gutterBottom
+                              variant="subtitle1"
+                              component="div"
+                            >
+                              {item.title}
+                            </Typography>
+                          </CardContent>
+                        </CardActionArea>
+                      </Card>
+                    </Link>
+                  </Box>
+                ))}
             </Grid>
           </Grid>
         </Grid>
@@ -77,28 +109,40 @@ export default function International() {
           <Typography variant="h4" component="h4">
             Trending
           </Typography>
-          {[1, 2, 3, 4].map((item) => (
-            <Card sx={{ mt: 2, borderRadius: 0 }}>
-              <CardActionArea
-                sx={{ display: 'flex', alignItems: 'flex-start' }}
+          {internationalNews &&
+            internationalNews.slice(6, 10).map((item, index) => (
+              <Link
+                href={item?.url}
+                target="_blank"
+                rel="noreferrer"
+                color="inherit"
               >
-                <CardMedia
-                  component="img"
-                  sx={{ height: 100, width: 100 }}
-                  image="https://i.blogs.es/e044d8/apple-studio-display-5k/840_560.jpeg"
-                  alt="Live from space album cover"
-                />
-                <CardContent sx={{ flex: '1 0 auto', pt: 1 }}>
-                  <Typography variant="caption" component="p">
-                    27 Dec 2020
-                  </Typography>
-                  <Typography gutterBottom variant="subtitle1" component="div">
-                    Now Is the Time to Think About
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          ))}
+                <Card sx={{ mt: 2, borderRadius: 0 }} key={index}>
+                  <CardActionArea
+                    sx={{ display: 'flex', alignItems: 'flex-start' }}
+                  >
+                    <CardMedia
+                      component="img"
+                      sx={{ height: 108, width: 100 }}
+                      image={item.urlToImage}
+                      alt="Live from space album cover"
+                    />
+                    <CardContent sx={{ pt: 1 }}>
+                      <Typography variant="caption" component="p">
+                        {moment(item.publishedAt).format('LL')}
+                      </Typography>
+                      <Typography
+                        gutterBottom
+                        variant="subtitle1"
+                        component="div"
+                      >
+                        {item.title}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Link>
+            ))}
         </Grid>
       </Grid>
     </Box>

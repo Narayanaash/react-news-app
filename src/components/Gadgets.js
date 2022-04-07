@@ -61,8 +61,8 @@ export default function Gadgets() {
         </Grid>
         <Grid item xs={12}>
           <Grid container spacing={2}>
-            {[1, 2, 3, 4].map((item) => (
-              <Grid item xs={6}>
+            {[1, 2, 3, 4].map((item, index) => (
+              <Grid item xs={6} key={index}>
                 <Card sx={{ borderRadius: 0 }}>
                   <CardActionArea
                     sx={{ display: 'flex', alignItems: 'flex-start' }}
@@ -80,7 +80,7 @@ export default function Gadgets() {
                       <Typography
                         gutterBottom
                         variant="subtitle1"
-                        component="subtitle1"
+                        component="div"
                       >
                         Now Is the Time to Think About
                       </Typography>

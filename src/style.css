@@ -11,6 +11,15 @@ h1, h2, h3, h4, h5, h6, .MuiTypography-subtitle1 {
     -webkit-box-orient: vertical;
 }
 
+.MuiTypography-subtitle1 {
+    -webkit-line-clamp: 2;
+}
+
 img {
     display: block;
+    object-position: top;
+}
+
+a {
+    text-decoration: none !important;
 }

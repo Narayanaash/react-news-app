@@ -83,8 +83,8 @@ const Header = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+              {pages.map((page, index) => (
+                <MenuItem key={index} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -100,8 +100,12 @@ const Header = () => {
             src="./logo.png"
           />
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Link to={`/${page}`} style={{ textDecoration: 'none' }}>
+            {pages.map((page, index) => (
+              <Link
+                to={`/${page}`}
+                key={index}
+                style={{ textDecoration: 'none' }}
+              >
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}

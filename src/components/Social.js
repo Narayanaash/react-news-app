@@ -7,7 +7,7 @@ export default function Social() {
   return (
     <Box sx={{ mt: 3 }}>
       <Box>
-        <Typography variant="subtitle1" component="subtitle1">
+        <Typography variant="subtitle1" component="div">
           Stay Connected
         </Typography>
       </Box>

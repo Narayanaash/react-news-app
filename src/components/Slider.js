@@ -31,8 +31,8 @@ export default function Slider() {
         autoplay
         pagination={{ clickable: true }}
       >
-        {entertainmentNews.map((item) => (
-          <SwiperSlide>
+        {entertainmentNews.map((item, index) => (
+          <SwiperSlide key={index}>
             <Paper square sx={{ color: '#fff', position: 'relative' }}>
               <img
                 width="100%"
@@ -65,7 +65,7 @@ export default function Slider() {
                     <Typography
                       variant="h5"
                       component="h5"
-                      sx={{ fontWeight: '500', mb: 2, maxWidth: 'initial' }}
+                      sx={{ fontWeight: '500', mb: 2, maxWidth: '65ch' }}
                     >
                       {item?.title}
                     </Typography>
