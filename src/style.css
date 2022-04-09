@@ -20,6 +20,10 @@ img {
     object-position: top;
 }
 
+img.css-rhsghg {
+    max-height: 207px;
+}
+
 a {
     text-decoration: none !important;
 }
