@@ -23,7 +23,7 @@ export default function Breaking() {
         <BreakingSkeleton />
       ) : (
         <Grid container spacing={2} sx={{ pt: '10px', mb: 5 }}>
-          <Grid item xs={7}>
+          <Grid item xs={12} md={7}>
             <Paper
               square
               sx={{ color: '#fff', height: '100%', position: 'relative' }}
@@ -67,9 +67,9 @@ export default function Breaking() {
               </Link>
             </Paper>
           </Grid>
-          <Grid item xs={5}>
+          <Grid item xs={12} md={5}>
             <Grid container spacing={2}>
-              <Grid item xs={6}>
+              <Grid item xs={12} md={6}>
                 <Paper
                   square
                   sx={{ color: '#fff', height: '100%', position: 'relative' }}
@@ -117,7 +117,7 @@ export default function Breaking() {
                   </Link>
                 </Paper>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={12} md={6}>
                 <Paper
                   square
                   sx={{ color: '#fff', height: '100%', position: 'relative' }}
