@@ -38,7 +38,7 @@ export default function Inner() {
           <Grid container spacing={3}>
             {innerNews &&
               innerNews.map((item, index) => (
-                <Grid item xs={4} key={index}>
+                <Grid item xs={12} md={6} lg={4} key={index}>
                   <Link
                     href={item?.url}
                     target="_blank"
