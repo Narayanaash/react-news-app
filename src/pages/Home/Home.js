@@ -27,7 +27,7 @@ export default function Home() {
               Sports
             </Typography>
           </Grid>
-          <Grid item xs={9}>
+          <Grid item xs={12} md={9}>
             <Sports />
             <Business />
             <Politics />
@@ -35,7 +35,8 @@ export default function Home() {
           </Grid>
           <Grid
             item
-            xs={3}
+            xs={12}
+            md={3}
             sx={{ position: 'sticky', top: 20, height: '100vh' }}
           >
             <Newsletter />
