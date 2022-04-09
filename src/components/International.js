@@ -22,7 +22,7 @@ export default function International() {
   return (
     <Box sx={{ mb: 4 }}>
       <Grid container spacing={5}>
-        <Grid item xs={8}>
+        <Grid item xs={12} md={8}>
           <Typography
             variant="h4"
             component="h4"
@@ -31,7 +31,7 @@ export default function International() {
             International
           </Typography>
           <Grid container spacing={2}>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <Link
                 href={internationalNews && internationalNews[1]?.url}
                 target="_blank"
@@ -70,7 +70,7 @@ export default function International() {
                 </Card>
               </Link>
             </Grid>
-            <Grid item xs={6} sx={{ mt: -2 }}>
+            <Grid item xs={12} md={6} sx={{ mt: -2 }}>
               {internationalNews &&
                 internationalNews.slice(2, 6).map((item, index) => (
                   <Box key={index}>
@@ -115,7 +115,7 @@ export default function International() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
           <Typography variant="h4" component="h4">
             Trending
           </Typography>
