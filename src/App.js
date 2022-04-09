@@ -5,7 +5,7 @@ import './style.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter primary={false}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path=":pagename" element={<Inner />} />

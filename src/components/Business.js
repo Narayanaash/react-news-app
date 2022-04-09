@@ -19,10 +19,6 @@ export default function Business() {
     fetchBusinessNews(dispatch);
   }, []);
 
-  useEffect(() => {
-    // console.log(businessNews);
-  }, [businessNews]);
-
   return (
     <Box sx={{ mb: 5 }}>
       <Typography variant="h4" component="h4" sx={{ mb: 2, color: '#ed6c02' }}>

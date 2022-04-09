@@ -1,13 +1,28 @@
-import { Box, Container, Grid, Paper, Typography } from '@mui/material';
+import { Box, Container, Grid, Link, Paper, Typography } from '@mui/material';
 import Layout from '../../components/Layout';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
 import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchInnerNews } from '../../redux/apiCalls';
+import moment from 'moment';
 
 export default function Inner() {
   let params = useParams();
+
+  const innerNews = useSelector((state) => state.innerNewsSlice.innerNewsList);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    fetchInnerNews(params.pagename, dispatch);
+    window.scrollTo({
+      top: 0,
+    });
+  }, [params]);
 
   return (
     <Layout>
@@ -21,33 +36,38 @@ export default function Inner() {
             {params.pagename}
           </Typography>
           <Grid container spacing={3}>
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
-              <Grid item xs={4}>
-                <Card sx={{ borderRadius: 0 }}>
-                  <CardActionArea>
-                    <CardMedia
-                      component="img"
-                      image="https://i.blogs.es/e044d8/apple-studio-display-5k/840_560.jpeg"
-                      alt="green iguana"
-                    />
-                    <CardContent>
-                      <Typography variant="caption" component="p">
-                        Craig Bator - 27 Dec 2020
-                      </Typography>
-                      <Typography gutterBottom variant="h6" component="h6">
-                        Now Is the Time to Think About Your Small Business
-                        Success
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Faucibus lobortis augue condimentum maecenas. Metus at
-                        in fames vitae posuere ut vel vulputate....
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Grid>
-            ))}
+            {innerNews &&
+              innerNews.map((item, index) => (
+                <Grid item xs={4} key={index}>
+                  <Link
+                    href={item?.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    color="inherit"
+                  >
+                    <Card sx={{ borderRadius: 0 }}>
+                      <CardActionArea>
+                        <CardMedia
+                          component="img"
+                          image={item.urlToImage}
+                          alt=""
+                        />
+                        <CardContent>
+                          <Typography variant="caption" component="p">
+                            {moment(item.publishedAt).format('LLLL')}
+                          </Typography>
+                          <Typography gutterBottom variant="h6" component="h6">
+                            {item.title}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            {item.description}
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                    </Card>
+                  </Link>
+                </Grid>
+              ))}
           </Grid>
         </Box>
       </Container>

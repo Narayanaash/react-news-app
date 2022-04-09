@@ -12,7 +12,6 @@ export const sportsNewsSlice = createSlice({
       state.sportsNewsList = action.payload.filter(
         (item) => item.urlToImage !== null
       );
-      console.log(state.sportsNewsList);
     },
   },
 });

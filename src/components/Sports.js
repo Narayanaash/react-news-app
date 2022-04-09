@@ -33,11 +33,7 @@ export default function Sports() {
               >
                 <Card sx={{ borderRadius: 0 }}>
                   <CardActionArea>
-                    <CardMedia
-                      component="img"
-                      image={item.urlToImage}
-                      alt="green iguana"
-                    />
+                    <CardMedia component="img" image={item.urlToImage} alt="" />
                     <CardContent>
                       <Typography variant="caption" component="p">
                         {moment(item.publishedAt).format('LLLL')}

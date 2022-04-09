@@ -45,7 +45,12 @@ export default function International() {
                       image={
                         internationalNews && internationalNews[1]?.urlToImage
                       }
-                      alt="green iguana"
+                      alt=""
+                      onError={({ currentTarget }) => {
+                        currentTarget.onerror = null;
+                        currentTarget.src =
+                          'https://via.placeholder.com/400x300?text=Image+Not+Available';
+                      }}
                     />
                     <CardContent>
                       <Typography variant="caption" component="p">
@@ -83,7 +88,12 @@ export default function International() {
                             component="img"
                             sx={{ height: 108, width: 100 }}
                             image={item.urlToImage}
-                            alt="Live from space album cover"
+                            alt=""
+                            onError={({ currentTarget }) => {
+                              currentTarget.onerror = null;
+                              currentTarget.src =
+                                'https://via.placeholder.com/100x108?text=Image+Not+Available';
+                            }}
                           />
                           <CardContent sx={{ pt: 1 }}>
                             <Typography variant="caption" component="p">
@@ -126,6 +136,11 @@ export default function International() {
                       sx={{ height: 108, width: 100 }}
                       image={item.urlToImage}
                       alt="Live from space album cover"
+                      onError={({ currentTarget }) => {
+                        currentTarget.onerror = null;
+                        currentTarget.src =
+                          'https://via.placeholder.com/100x108?text=Image+Not+Available';
+                      }}
                     />
                     <CardContent sx={{ pt: 1 }}>
                       <Typography variant="caption" component="p">
