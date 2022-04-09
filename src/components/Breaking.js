@@ -58,7 +58,11 @@ export default function Breaking() {
                     <Typography
                       variant="h4"
                       component="h4"
-                      sx={{ fontWeight: '500', mt: 1 }}
+                      sx={{
+                        fontWeight: '500',
+                        mt: 1,
+                        fontSize: { xs: '1rem' },
+                      }}
                     >
                       {breakingNews[0]?.title}
                     </Typography>
