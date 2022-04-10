@@ -88,7 +88,7 @@ const Header = () => {
                 <Link
                   to={`/${page}`}
                   key={index}
-                  sx={{ textDecoration: 'none', color: 'white' }}
+                  sx={{ textDecoration: 'none', color: 'white', mr: 1 }}
                 >
                   <MenuItem onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{page}</Typography>
