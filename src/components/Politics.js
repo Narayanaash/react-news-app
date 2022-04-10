@@ -74,7 +74,7 @@ export default function Politics() {
                       >
                         <CardMedia
                           component="img"
-                          sx={{ height: 108, width: 100 }}
+                          sx={{ height: 108, width: 90 }}
                           image={item.urlToImage}
                           alt="Live from space album cover"
                         />
