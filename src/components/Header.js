@@ -96,15 +96,17 @@ const Header = () => {
               ))}
             </Menu>
           </Box>
-          <Box
-            component="img"
-            sx={{
-              m: 'auto',
-              display: { xs: 'inline-block', md: 'none' },
-            }}
-            alt=""
-            src="./logo.png"
-          />
+          <Link to="/">
+            <Box
+              component="img"
+              sx={{
+                m: 'auto',
+                display: { xs: 'inline-block', md: 'none' },
+              }}
+              alt=""
+              src="./logo.png"
+            />
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page, index) => (
               <Link
