@@ -38,6 +38,7 @@ export default function Slider() {
                 width="100%"
                 src={item?.urlToImage}
                 alt=""
+                className="sliderImg"
                 style={{
                   height: '100%',
                   maxHeight: '450px',
@@ -74,7 +75,6 @@ export default function Slider() {
                       component="p"
                       sx={{
                         maxWidth: '480px',
-                        height: { xs: '420px', md: 'auto' },
                         pb: { xs: 0, md: 4 },
                       }}
                     >

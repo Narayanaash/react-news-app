@@ -27,3 +27,7 @@ img.css-rhsghg {
 a {
     text-decoration: none !important;
 }
+
+.sliderImg {
+    height: 400px;
+}
