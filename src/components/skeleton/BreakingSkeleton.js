@@ -36,7 +36,7 @@ export default function BreakingSkeleton() {
         </Grid>
       </Box>
       <Box sx={{ display: { xs: 'block', md: 'none' } }}>
-        <Skeleton />
+        <Skeleton height={'38vw'} />
       </Box>
     </>
   );
