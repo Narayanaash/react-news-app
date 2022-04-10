@@ -95,7 +95,7 @@ export default function International() {
                                 'https://via.placeholder.com/100x108?text=Image+Not+Available';
                             }}
                           />
-                          <CardContent sx={{ pt: 1 }}>
+                          <CardContent sx={{ py: 1 }}>
                             <Typography variant="caption" component="p">
                               {moment(item.publishedAt).format('LL')}
                             </Typography>
@@ -142,7 +142,7 @@ export default function International() {
                           'https://via.placeholder.com/100x108?text=Image+Not+Available';
                       }}
                     />
-                    <CardContent sx={{ pt: 1 }}>
+                    <CardContent sx={{ py: 1 }}>
                       <Typography variant="caption" component="p">
                         {moment(item.publishedAt).format('LL')}
                       </Typography>

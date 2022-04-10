@@ -72,7 +72,7 @@ export default function Gadgets() {
                         image={item.urlToImage}
                         alt="Live from space album cover"
                       />
-                      <CardContent sx={{ pt: 1 }}>
+                      <CardContent sx={{ py: 1 }}>
                         <Typography variant="caption" component="p">
                           {moment(item.publishedAt).format('LL')}
                         </Typography>
