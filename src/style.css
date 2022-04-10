@@ -29,5 +29,5 @@ a {
 }
 
 .sliderImg {
-    height: 400px;
+    height: 400px !important;
 }
