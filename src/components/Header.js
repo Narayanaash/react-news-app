@@ -91,7 +91,7 @@ const Header = () => {
                   style={{
                     textDecoration: 'none',
                     color: 'white',
-                    marginRight: 1,
+                    marginRight: '10px',
                   }}
                 >
                   <MenuItem onClick={handleCloseNavMenu}>
@@ -103,12 +103,16 @@ const Header = () => {
           </Box>
           <Link
             to="/"
-            sx={{
-              m: 'auto',
-              display: { xs: 'inline-block', md: 'none' },
+            style={{
+              margin: 'auto',
             }}
           >
-            <Box component="img" alt="" src="./logo.png" />
+            <Box
+              component="img"
+              alt=""
+              src="./logo.png"
+              sx={{ display: { xs: 'inline-block', md: 'none' } }}
+            />
           </Link>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page, index) => (
