@@ -90,8 +90,9 @@ const Header = () => {
                   key={index}
                   style={{
                     textDecoration: 'none',
-                    color: 'white',
+                    color: 'black',
                     marginRight: '10px',
+                    display: 'block',
                   }}
                 >
                   <MenuItem onClick={handleCloseNavMenu}>
@@ -105,6 +106,8 @@ const Header = () => {
             to="/"
             style={{
               margin: 'auto',
+              display: 'flex',
+              marginRight: '10px',
             }}
           >
             <Box

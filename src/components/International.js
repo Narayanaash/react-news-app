@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchInternationalNews } from '../redux/apiCalls';
 import moment from 'moment';
+import InnerSkeleton from './skeleton/InnerSkeleton';
 
 export default function International() {
   const internationalNews = useSelector(
@@ -31,45 +32,50 @@ export default function International() {
             International
           </Typography>
           <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
-              <Link
-                href={internationalNews && internationalNews[1]?.url}
-                target="_blank"
-                rel="noreferrer"
-                color="inherit"
-              >
-                <Card sx={{ borderRadius: 0 }}>
-                  <CardActionArea>
-                    <CardMedia
-                      component="img"
-                      image={
-                        internationalNews && internationalNews[1]?.urlToImage
-                      }
-                      alt=""
-                      onError={({ currentTarget }) => {
-                        currentTarget.onerror = null;
-                        currentTarget.src =
-                          'https://via.placeholder.com/400x300?text=Image+Not+Available';
-                      }}
-                    />
-                    <CardContent>
-                      <Typography variant="caption" component="p">
-                        {internationalNews &&
-                          moment(internationalNews[1]?.publishedAt).format(
-                            'LLLL'
-                          )}
-                      </Typography>
-                      <Typography gutterBottom variant="h6" component="h6">
-                        {internationalNews && internationalNews[1]?.title}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {internationalNews && internationalNews[1]?.description}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Link>
-            </Grid>
+            {internationalNews.length === 0 ? (
+              <InnerSkeleton xscol={12} mdcol={6} />
+            ) : (
+              <Grid item xs={12} md={6}>
+                <Link
+                  href={internationalNews && internationalNews[1]?.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  color="inherit"
+                >
+                  <Card sx={{ borderRadius: 0 }}>
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        image={
+                          internationalNews && internationalNews[1]?.urlToImage
+                        }
+                        alt=""
+                        onError={({ currentTarget }) => {
+                          currentTarget.onerror = null;
+                          currentTarget.src =
+                            'https://via.placeholder.com/400x300?text=Image+Not+Available';
+                        }}
+                      />
+                      <CardContent>
+                        <Typography variant="caption" component="p">
+                          {internationalNews &&
+                            moment(internationalNews[1]?.publishedAt).format(
+                              'LLLL'
+                            )}
+                        </Typography>
+                        <Typography gutterBottom variant="h6" component="h6">
+                          {internationalNews && internationalNews[1]?.title}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {internationalNews &&
+                            internationalNews[1]?.description}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </Link>
+              </Grid>
+            )}
             <Grid item xs={12} md={6} sx={{ mt: -2 }}>
               {internationalNews &&
                 internationalNews.slice(2, 6).map((item, index) => (
