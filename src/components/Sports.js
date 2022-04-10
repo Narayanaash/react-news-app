@@ -61,7 +61,7 @@ export default function Sports() {
                     >
                       <CardMedia
                         component="img"
-                        sx={{ height: 90, width: 108 }}
+                        sx={{ height: 100, width: 115 }}
                         image={item.urlToImage}
                         alt="Live from space album cover"
                       />
