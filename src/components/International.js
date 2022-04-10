@@ -86,7 +86,7 @@ export default function International() {
                         >
                           <CardMedia
                             component="img"
-                            sx={{ height: 108, width: 90 }}
+                            sx={{ height: 90, width: 108 }}
                             image={item.urlToImage}
                             alt=""
                             onError={({ currentTarget }) => {
@@ -133,7 +133,7 @@ export default function International() {
                   >
                     <CardMedia
                       component="img"
-                      sx={{ height: 108, width: 90 }}
+                      sx={{ height: 90, width: 108 }}
                       image={item.urlToImage}
                       alt="Live from space album cover"
                       onError={({ currentTarget }) => {
