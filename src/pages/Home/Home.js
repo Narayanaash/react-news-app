@@ -37,7 +37,11 @@ export default function Home() {
             item
             xs={12}
             md={3}
-            sx={{ position: 'sticky', top: 20, height: '100vh' }}
+            sx={{
+              position: { xs: 'static', md: 'sticky' },
+              top: 20,
+              height: { xs: 'auto', md: '100vh' },
+            }}
           >
             <Newsletter />
             <Social />

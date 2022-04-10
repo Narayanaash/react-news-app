@@ -61,7 +61,7 @@ export default function Politics() {
           <Grid container spacing={2}>
             {politicsNews &&
               politicsNews.slice(2, 6).map((item, index) => (
-                <Grid item xs={6} key={index}>
+                <Grid item xs={12} md={6} key={index}>
                   <Link
                     href={item?.url}
                     target="_blank"

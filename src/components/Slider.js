@@ -72,7 +72,11 @@ export default function Slider() {
                     <Typography
                       variant="body1"
                       component="p"
-                      sx={{ maxWidth: '480px', pb: 4 }}
+                      sx={{
+                        maxWidth: '480px',
+                        height: { xs: '420px', md: 'auto' },
+                        pb: { xs: 0, md: 4 },
+                      }}
                     >
                       {item?.description}
                     </Typography>

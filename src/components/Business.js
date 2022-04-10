@@ -61,7 +61,7 @@ export default function Business() {
           <Grid container spacing={2}>
             {businessNews &&
               businessNews.slice(2, 6).map((item, index) => (
-                <Grid item xs={6} key={index}>
+                <Grid item xs={12} md={6} key={index}>
                   <Card sx={{ borderRadius: 0 }}>
                     <CardActionArea
                       sx={{ display: 'flex', alignItems: 'flex-start' }}
