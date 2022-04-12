@@ -39,7 +39,7 @@ export default function SearchResult() {
             component="h4"
             sx={{ mb: 2, color: '#ed6c02', textTransform: 'capitalize' }}
           >
-            Searh results for :&nbsp;{params.terms}
+            Searh results for :&nbsp;{params.terms.split('+').join(' ')}
           </Typography>
           {loading ? (
             <Grid container spacing={3}>
