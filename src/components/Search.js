@@ -53,7 +53,7 @@ export default function Search() {
   const handleSubmit = (e) => {
     e.preventDefault();
     let searcString = inputText.current.value;
-    navigate('/search/' + searcString);
+    navigate('/search/' + searcString.split(' ').join('+'));
   };
 
   return (

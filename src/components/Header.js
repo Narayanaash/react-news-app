@@ -23,6 +23,8 @@ const pages = [
   'gadgets',
 ];
 
+let logo = process.env.PUBLIC_URL + '/logo.png';
+
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -51,7 +53,7 @@ const Header = () => {
               component="img"
               sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
               alt=""
-              src="./logo.png"
+              src={logo}
             />
           </Link>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
@@ -113,7 +115,7 @@ const Header = () => {
             <Box
               component="img"
               alt=""
-              src="./logo.png"
+              src={logo}
               sx={{ display: { xs: 'inline-block', md: 'none' } }}
             />
           </Link>
