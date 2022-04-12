@@ -7,6 +7,7 @@ import { getBusinessNewsSuccess } from './businessNewsSlice';
 import { getPoliticsNewsSuccess } from './politicsNewsSlice';
 import { getGadgetsNewsSuccess } from './gadgetsNewsSlice';
 import { getInnerNewsSuccess } from './innerNewsSlice';
+import { getSearchedNewsSuccess } from './newsSearchSlice';
 
 const baseurl = process.env.REACT_APP_API_URL;
 
@@ -62,7 +63,15 @@ export const fetchGadgetsNews = async (dispatch) => {
 // for inner page
 export const fetchInnerNews = async (page, dispatch) => {
   try {
-    const res = await axios.get(baseurl + '' + page);
+    const res = await axios.get(baseurl + page);
     dispatch(getInnerNewsSuccess(res.data.articles));
+  } catch (err) {}
+};
+
+// for search page
+export const fetchSeachedNews = async (terms, dispatch) => {
+  try {
+    const res = await axios.get(baseurl + 'search/' + terms);
+    dispatch(getSearchedNewsSuccess(res.data.articles));
   } catch (err) {}
 };

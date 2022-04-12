@@ -132,6 +132,7 @@ export default function International() {
                 target="_blank"
                 rel="noreferrer"
                 color="inherit"
+                key={index}
               >
                 <Card sx={{ mt: 2, borderRadius: 0 }} key={index}>
                   <CardActionArea

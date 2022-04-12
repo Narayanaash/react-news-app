@@ -1,8 +1,13 @@
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
+import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Search() {
+  const inputText = useRef();
+  const navigate = useNavigate();
+
   const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -44,15 +49,25 @@ export default function Search() {
       },
     },
   }));
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let searcString = inputText.current.value;
+    navigate('/search/' + searcString);
+  };
+
   return (
     <Search>
-      <SearchIconWrapper>
-        <SearchIcon />
-      </SearchIconWrapper>
-      <StyledInputBase
-        placeholder="Search…"
-        inputProps={{ 'aria-label': 'search' }}
-      />
+      <form onSubmit={handleSubmit}>
+        <SearchIconWrapper>
+          <SearchIcon />
+        </SearchIconWrapper>
+        <StyledInputBase
+          placeholder="Search…"
+          inputProps={{ 'aria-label': 'search' }}
+          inputRef={inputText}
+        />
+      </form>
     </Search>
   );
 }

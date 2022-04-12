@@ -7,6 +7,7 @@ import businessNewsSlice from './businessNewsSlice';
 import politicsNewsSlice from './politicsNewsSlice';
 import gadgetsNewsSlice from './gadgetsNewsSlice';
 import innerNewsSlice from './innerNewsSlice';
+import newsSearchSlice from './newsSearchSlice';
 
 export const store = configureStore({
   reducer: {
@@ -18,5 +19,6 @@ export const store = configureStore({
     politicsNewsSlice,
     gadgetsNewsSlice,
     innerNewsSlice,
+    newsSearchSlice,
   },
 });

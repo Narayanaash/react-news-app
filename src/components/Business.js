@@ -27,7 +27,7 @@ export default function Business() {
       <Grid container spacing={2}>
         {businessNews &&
           businessNews.slice(0, 2).map((item, index) => (
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} key={index}>
               <Link
                 href={item?.url}
                 target="_blank"

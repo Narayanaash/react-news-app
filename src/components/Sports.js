@@ -24,7 +24,7 @@ export default function Sports() {
       <Grid container spacing={2}>
         {sportsNews &&
           sportsNews.slice(0, 2).map((item, index) => (
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} key={index}>
               <Link
                 href={item?.url}
                 target="_blank"

@@ -7,16 +7,16 @@ import { CardActionArea } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchInnerNews } from '../../redux/apiCalls';
-import { startLoading } from '../../redux/innerNewsSlice';
+import { fetchSeachedNews } from '../../redux/apiCalls';
+import { startLoading } from '../../redux/newsSearchSlice';
 import moment from 'moment';
 import InnerSkeleton from '../../components/skeleton/InnerSkeleton';
 
-export default function Inner() {
+export default function SearchResult() {
   let params = useParams();
 
-  const { innerNewsList: innerNews, loading } = useSelector(
-    (state) => state.innerNewsSlice
+  const { searchedNewsList, loading } = useSelector(
+    (state) => state.newsSearchSlice
   );
 
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ export default function Inner() {
   useEffect(() => {
     dispatch(startLoading());
 
-    fetchInnerNews(params.pagename, dispatch);
+    fetchSeachedNews(params.terms, dispatch);
     window.scrollTo({
       top: 0,
     });
@@ -49,8 +49,8 @@ export default function Inner() {
             </Grid>
           ) : (
             <Grid container spacing={3}>
-              {innerNews &&
-                innerNews.map((item, index) => (
+              {searchedNewsList &&
+                searchedNewsList.map((item, index) => (
                   <Grid item xs={12} md={6} lg={4} key={index}>
                     <Link
                       href={item?.url}
